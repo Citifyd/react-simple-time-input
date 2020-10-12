@@ -6239,10 +6239,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
-simple-time-input-engine@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/simple-time-input-engine/-/simple-time-input-engine-0.0.5.tgz#e81387926ed00ef009dbfa8db827b09acb554a03"
-  integrity sha512-fU2PRDSUfSRg2RTxUfzdVRbRMFNskc8AMccNH9D/CKRw35pXoBFfurNhr8UTPkelbOWHV6ikhhIskW1u0yd7yw==
+simple-time-input-engine@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/simple-time-input-engine/-/simple-time-input-engine-0.0.6.tgz#dfd53b006118e403ed7e47e1dd2d037c5cfc7625"
+  integrity sha512-ura/Y8Q7HkpL80ToURjZnGxoOzFu97e+aLeMy6DnosWVfnY1wyA9XlXhLIdlLZASss8N8xySEDG5YFkZEHgisA==
 
 sinon@^9.2.0:
   version "9.2.0"
