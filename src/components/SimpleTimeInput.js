@@ -8,6 +8,8 @@ import { parseInputChange, formatTimeForDisplay } from 'simple-time-input-engine
 function SimpleTimeInput ({
   value,
   onValueChange,
+  onBlur,
+  onChange,
   clockMode,
   className,
   invalidClassName,
@@ -44,6 +46,11 @@ function SimpleTimeInput ({
         onValueChange(newTime)
       }
     }
+
+    // forward original event
+    if (onBlur) {
+      onBlur(event)
+    }
   }, [time, clockMode])
 
   const onInputChange = useCallback(event => {
@@ -52,6 +59,11 @@ function SimpleTimeInput ({
 
     const { valid } = parseInputChange({ newValue: value, previousTime: time, clockMode })
     setIsInvalid(!valid)
+
+    // forward original event
+    if (onChange) {
+      onChange(event)
+    }
   }, [time, clockMode])
 
   const classNames = [
