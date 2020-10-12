@@ -10,23 +10,24 @@ function SimpleTimeInput ({
   onValueChange,
   clockMode,
   className,
-  invalidClass,
+  invalidClassName,
   ...inputProps
 }) {
   const [time, setTime] = useState('')
   const [inputValue, setInputValue] = useState('')
   const [isInvalid, setIsInvalid] = useState(false)
-  const [lastReset, setLastReset] = useState(null)
 
   useEffect(() => {
     const time = value || ''
     setTime(time)
   }, [value])
 
-  useEffect(() => {
+  useEffect(() => refreshInput({ time, clockMode }), [time, clockMode])
+
+  const refreshInput = useCallback(({ time, clockMode }) => {
     setIsInvalid(false)
     setInputValue(formatTimeForDisplay({ time, clockMode }))
-  }, [clockMode, time, lastReset])
+  })
 
   const updateTimeBasedOnInput = useCallback(event => {
     const { valid, time: newTime } = parseInputChange({
@@ -36,8 +37,7 @@ function SimpleTimeInput ({
     })
 
     if (!valid) {
-      // if user blurs with invalid value, roll back input value to last valid informed
-      setLastReset(new Date())
+      refreshInput({ time, clockMode }) // if user blurs with invalid value, roll back input value to last valid informed
     } else if (newTime !== time) {
       setTime(newTime)
       if (onValueChange) {
@@ -56,7 +56,7 @@ function SimpleTimeInput ({
 
   const classNames = [
     className,
-    isInvalid ? invalidClass : null
+    isInvalid ? invalidClassName : null
   ].filter(className => typeof className === 'string').join(' ')
 
   return (
@@ -73,7 +73,7 @@ function SimpleTimeInput ({
 
 SimpleTimeInput.defaultProps = {
   clockMode: 12,
-  invalidClass: 'invalid-time'
+  invalidClassName: 'invalid-time'
 }
 
 SimpleTimeInput.propTypes = {
