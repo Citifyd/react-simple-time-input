@@ -1,0 +1,41 @@
+{
+  "name": "react-simple-time-input",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "author": "Guilherme Sehn <gui.s@citifyd.com>",
+  "scripts": {
+    "dev": "webpack-dev-server --config=webpack-dev.config.js --mode=development --open --progress",
+    "build": "webpack --config=webpack-dist.config.js --mode=production && webpack --config=webpack-dev.config.js --mode=production"
+  },
+  "peerDependencies": {
+    "prop-types": ">= 15.0.0",
+    "react": ">= 16.0.0",
+    "react-dom": ">= 16.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.5.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "standard": "^14.3.4",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "simple-time-input-engine": "^0.0.5"
+  },
+  "standard": {
+    "ignore": [
+      "/dist",
+      "/docs"
+    ]
+  },
+  "files": [
+    "LICENSE",
+    "dist/"
+  ]
+}

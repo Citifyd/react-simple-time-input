@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>React Simple Time Input</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font: 20px -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+        text-align: center;
+        padding: 40px;
+      }
+      a {
+        color: #e47f3a;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 40px;
+      }
+      h1 span {
+        white-space: nowrap;
+      }
+      code {
+        display: block;
+        font-family: monospace;
+      }
+      .time-label {
+        display: block;
+        margin-bottom: 20px;
+      }
+      .time-input {
+        width: 100%;
+        max-width: 300px;
+        font-size: 2em;
+        text-align: center;
+        border: 2px solid #ccc;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+      .time-input:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(243, 176, 36, .25);
+        border-color: #f3b024;
+      }
+      .time-input.invalid-time {
+        border-color: #dc3545;
+      }
+      .time-input.invalid-time:focus {
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, .25);
+      }
+      .mode-selection {
+        margin: 40px 0;
+      }
+      .mode-selection h4 {
+        font-size: 1em;
+        margin-bottom: 10px;
+      }
+      .mode-selection label {
+        display: block;
+        line-height: 1.8em;
+      }
+      footer p {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
