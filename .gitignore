@@ -33,6 +33,7 @@ node_modules/
 
 # Dev build output
 .dev/
+.test/
 
 # macOS
 .DS_Store
