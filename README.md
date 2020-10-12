@@ -1,6 +1,6 @@
 # react-simple-time-input
 
-A simple time input that accepts time in flexible formats. It has support for 12 and 24 hours formats.
+A simple time input that accepts times in flexible format. It has support for both 12- and 24-hour format.
 
 [**View live demo**](https://citifyd.github.io/react-simple-time-input/)
 

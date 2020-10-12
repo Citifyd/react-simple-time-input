@@ -39,7 +39,8 @@ function SimpleTimeInput ({
     })
 
     if (!valid) {
-      refreshInput({ time, clockMode }) // if user blurs with invalid value, roll back input value to last valid informed
+      // if user blurs with invalid value, rollback input value to last valid time informed
+      refreshInput({ time, clockMode })
     } else if (newTime !== time) {
       setTime(newTime)
       if (onValueChange) {
