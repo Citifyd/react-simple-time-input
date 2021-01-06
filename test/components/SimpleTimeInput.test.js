@@ -11,7 +11,7 @@ import SimpleTimeInput from '../../src/components/SimpleTimeInput'
 describe('<SimpleTimeInput />', () => {
   it('renders an input field', () => {
     const wrapper = mount(
-      <SimpleTimeInput time='' clockMode={12} />
+      <SimpleTimeInput value='' clockMode={12} />
     )
     expect(wrapper.find('input')).to.have.lengthOf(1)
   })
@@ -19,7 +19,7 @@ describe('<SimpleTimeInput />', () => {
   it('forwards props', () => {
     const wrapper = mount(
       <SimpleTimeInput
-        time=''
+        value=''
         clockMode={12}
         foo='bar'
         className='my-input-class'
