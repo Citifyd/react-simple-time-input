@@ -26,7 +26,7 @@ function MyComponent () {
 
   return (
     <SimpleTimeInput
-      time={time}
+      value={time}
       clockMode={12}
       onValueChange={valueChanged} // called on blur
     />
