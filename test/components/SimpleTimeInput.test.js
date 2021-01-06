@@ -38,6 +38,15 @@ describe('<SimpleTimeInput />', () => {
     expect(inputProps).to.have.property('className', 'my-input-class')
   })
 
+  it('forwards ref', () => {
+    const ref = React.createRef()
+    const wrapper = mount(
+      <SimpleTimeInput ref={ref} value='' clockMode={12} />
+    )
+    const input = wrapper.find('input').first().getDOMNode()
+    expect(input).to.be.equal(ref.current)
+  });
+
   it('renders input field with default value', () => {
     const wrapper = mount(
       <SimpleTimeInput value='14:00' clockMode={12} />

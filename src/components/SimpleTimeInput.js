@@ -5,17 +5,17 @@ import PropTypes from 'prop-types'
 
 import { parseInputChange, formatTimeForDisplay } from 'simple-time-input-engine'
 
-function SimpleTimeInput ({
+const SimpleTimeInput = React.forwardRef(({
   as: InputComponent,
   value,
   onValueChange,
   onBlur,
   onChange,
-  clockMode,  
+  clockMode,
   className,
   invalidClassName,
   ...inputProps
-}) {
+}, ref) => {
   const [time, setTime] = useState('')
   const [inputValue, setInputValue] = useState('')
   const [isInvalid, setIsInvalid] = useState(false)
@@ -76,6 +76,7 @@ function SimpleTimeInput ({
   return (
     <InputComponent
       {...inputProps}
+      ref={ref}
       type='text'
       onBlur={updateTimeBasedOnInput}
       onChange={onInputChange}
@@ -83,7 +84,7 @@ function SimpleTimeInput ({
       value={inputValue}
     />
   )
-}
+})
 
 SimpleTimeInput.defaultProps = {
   clockMode: 12,
