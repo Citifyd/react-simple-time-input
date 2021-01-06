@@ -6,11 +6,12 @@ import PropTypes from 'prop-types'
 import { parseInputChange, formatTimeForDisplay } from 'simple-time-input-engine'
 
 function SimpleTimeInput ({
+  as: InputComponent,
   value,
   onValueChange,
   onBlur,
   onChange,
-  clockMode,
+  clockMode,  
   className,
   invalidClassName,
   ...inputProps
@@ -73,7 +74,7 @@ function SimpleTimeInput ({
   ].filter(className => typeof className === 'string').join(' ')
 
   return (
-    <input
+    <InputComponent
       {...inputProps}
       type='text'
       onBlur={updateTimeBasedOnInput}
@@ -86,7 +87,8 @@ function SimpleTimeInput ({
 
 SimpleTimeInput.defaultProps = {
   clockMode: 12,
-  invalidClassName: 'invalid-time'
+  invalidClassName: 'invalid-time',
+  as: 'input'
 }
 
 SimpleTimeInput.propTypes = {
@@ -94,7 +96,8 @@ SimpleTimeInput.propTypes = {
   onValueChange: PropTypes.func,
   clockMode: PropTypes.oneOf([12, 24]).isRequired,
   className: PropTypes.string,
-  invalidClass: PropTypes.string
+  invalidClass: PropTypes.string,
+  as: PropTypes.elementType
 }
 
 export default SimpleTimeInput

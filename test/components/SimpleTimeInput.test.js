@@ -16,6 +16,14 @@ describe('<SimpleTimeInput />', () => {
     expect(wrapper.find('input')).to.have.lengthOf(1)
   })
 
+  it('allows passing a custom component to be rendered on "as" prop', () => {
+    const CustomInput = (props) => <div className="custom-input"><input {...props} /></div>
+    const wrapper = mount(
+      <SimpleTimeInput as={CustomInput} value='' clockMode={12} />
+    )
+    expect(wrapper.find('.custom-input input')).to.have.lengthOf(1)
+  })
+
   it('forwards props', () => {
     const wrapper = mount(
       <SimpleTimeInput
