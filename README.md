@@ -34,4 +34,6 @@ function MyComponent () {
 }
 ```
 
-By default, it will append an `invalid-time` class to the input if the user is typing a time in invalid format. You can set your own invalid class name by passing a `invalidClassName` prop.
+By default, it will be rendered as an `input` component. If you need to use a custom component, you can pass an `as` attribute, e.g. `as={Input}`.
+
+Also, it will append an `invalid-time` class to the input if the user is typing a time in invalid format. You can set your own invalid class name by passing a `invalidClassName` prop.
