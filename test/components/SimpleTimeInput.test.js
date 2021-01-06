@@ -17,7 +17,7 @@ describe('<SimpleTimeInput />', () => {
   })
 
   it('allows passing a custom component to be rendered on "as" prop', () => {
-    const CustomInput = (props) => <div className="custom-input"><input {...props} /></div>
+    const CustomInput = (props) => <div className='custom-input'><input {...props} /></div>
     const wrapper = mount(
       <SimpleTimeInput as={CustomInput} value='' clockMode={12} />
     )
