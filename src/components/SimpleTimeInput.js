@@ -98,7 +98,7 @@ SimpleTimeInput.propTypes = {
   onValueChange: PropTypes.func,
   clockMode: PropTypes.oneOf([12, 24]).isRequired,
   className: PropTypes.string,
-  invalidClass: PropTypes.string,
+  invalidClassName: PropTypes.string,
   as: PropTypes.elementType
 }
 
