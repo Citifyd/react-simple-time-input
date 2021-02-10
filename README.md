@@ -34,6 +34,16 @@ function MyComponent () {
 }
 ```
 
-By default, it will be rendered as an `input` component. If you need to use a custom component, you can pass an `as` attribute, e.g. `as={Input}`.
+### Prop types
 
-Also, it will append an `invalid-time` class to the input if the user is typing a time in invalid format. You can set your own invalid class name by passing a `invalidClassName` prop.
+| Prop | Required | Type | Description |
+| ---- | -------- | ---- | ----------- |
+| `value` | Yes | String | The current value, always in 24-hour format (e.g. `14:00`) |
+| `clockMode` | Yes | `12` or `24` (Number) | The clock input and display mode (12- or 24-hour format) |
+| `as` | No | `elementType` | Type of component to be rendered, e.g. `as={TextField}`. If not passed, an HTML `input` will be used by default. |
+| `onValueChange` | No | Function | Function to be called on blur event. It passes the interpreted time as argument. |
+| `invalidClassName` | No | String | `className` appended to element when user is typing a time in invalid format. If not passed, the class name `invalid-time` will be used by default. |
+
+Any additional prop passed is forwarded to the input component.
+
+When `onChange` is used, the event is forwarded and an object is passed as the second argument with a `valid` flag and `time` with the time interpreted.
