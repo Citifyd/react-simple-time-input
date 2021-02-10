@@ -60,12 +60,12 @@ const SimpleTimeInput = React.forwardRef(({
     const { value } = event.target
     setInputValue(value)
 
-    const { valid } = parseInputChange({ newValue: value, previousTime: time, clockMode })
+    const { valid, time } = parseInputChange({ newValue: value, previousTime: time, clockMode })
     setIsInvalid(!valid)
 
     // forward original event
     if (onChange) {
-      onChange(event)
+      onChange(event, { valid, time })
     }
   }, [time, clockMode])
 
