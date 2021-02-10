@@ -1,6 +1,6 @@
 {
   "name": "react-simple-time-input",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "author": "Guilherme Sehn <gui.s@citifyd.com>",
   "scripts": {
