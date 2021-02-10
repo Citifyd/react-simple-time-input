@@ -45,7 +45,7 @@ describe('<SimpleTimeInput />', () => {
     )
     const input = wrapper.find('input').first().getDOMNode()
     expect(input).to.be.equal(ref.current)
-  });
+  })
 
   it('renders input field with default value', () => {
     const wrapper = mount(
@@ -147,6 +147,20 @@ describe('<SimpleTimeInput />', () => {
     )
     const input = wrapper.find('input')
     input.simulate('change', { target: { value: 'wat' } })
+    input.simulate('blur')
+    wrapper.update()
+    expect(wrapper.find('input').props().value).to.be.equal('2:00pm') // goes back to previous value
+    expect(wrapper.find('input').props().className).to.be.equal('') // no invalid class
+    expect(onValueChange.called).to.be.false // onValueChange callback not called
+  })
+
+  it("returns to formatted time on blur and doesn't call onValueChange if time inferred is the same as previous time", () => {
+    const onValueChange = sinon.spy()
+    const wrapper = mount(
+      <SimpleTimeInput value='14:00' clockMode={12} onValueChange={onValueChange} />
+    )
+    const input = wrapper.find('input')
+    input.simulate('change', { target: { value: '14:' } })
     input.simulate('blur')
     wrapper.update()
     expect(wrapper.find('input').props().value).to.be.equal('2:00pm') // goes back to previous value

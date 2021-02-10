@@ -39,10 +39,11 @@ const SimpleTimeInput = React.forwardRef(({
       clockMode
     })
 
-    if (!valid) {
-      // if user blurs with invalid value, rollback input value to last valid time informed
+    if (!valid || newTime === time) {
       refreshInput({ time, clockMode })
-    } else if (newTime !== time) {
+    }
+
+    if (valid && newTime !== time) {
       setTime(newTime)
       if (onValueChange) {
         onValueChange(newTime)
